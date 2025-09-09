@@ -1,0 +1,16 @@
+---
+- name: Domonstrate lineinfile - example4
+  hosts: localhost
+  become: true
+  gather_facts: false
+  tasks:
+  - name: replace the line
+    lineinfile:
+      path: /etc/ssh/ssh_config
+      regexp: ^PermitRootLogin
+      line: "PermitRootLogin = no"
+  - name: Restart the sshd service
+    service:
+      name: sshd
+      state: restarted
+...

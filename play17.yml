@@ -1,0 +1,11 @@
+---
+- name: Demonstrate ansible variables
+  hosts: localhost
+  vars:
+    color: red
+  tasks:
+    - name: Print the value of variable defined above
+      debug:
+        msg: "The Value is: {{ color }}"
+...
+# End

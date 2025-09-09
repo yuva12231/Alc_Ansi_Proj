@@ -1,0 +1,13 @@
+---
+- name: Domonstrate lineinfile - example6 - insert the line after the specific line number.
+  hosts: localhost
+  become: true
+  gather_facts: false
+  tasks:
+  - name: insert the line after match 
+    lineinfile:
+      path: /home/ansible/statements.txt
+      line: "mouse"
+      insertbefore: ^6 
+
+...
