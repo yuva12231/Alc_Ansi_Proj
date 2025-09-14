@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 # Hii hello 
+=======
+yuvi
+>>>>>>> 987c386 (Raj)
 - name: Demonstrate lineinfile - example2
   hosts: localhost
   become: true
