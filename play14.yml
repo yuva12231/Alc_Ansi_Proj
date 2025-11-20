@@ -1,12 +1,9 @@
 ---
-ram
-- name: Demonstrate lininfile - example5 - insert line before the pattern match
+- name: Create a file on localhost
   hosts: localhost
-  become: true
   tasks:
-  - name: insert line before the line
-    ansible.builtin.lineinfile:
-      path: /home/ansible/playbooks/ashish.txt
-      line: "moksha  is here"
-      insertbefore: ^yogi
-...
+    - name: Create test file
+      file:
+        path: /tmp/myfile.txt
+        state: touch
+
