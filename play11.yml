@@ -1,16 +1,12 @@
 ---
-<<<<<<< HEAD
-# Hii hello 
-=======
-yuvi
->>>>>>> 987c386 (Raj)
-- name: Demonstrate lineinfile - example2
+- name: Create a user and add ssh public key to user's authorized keys
   hosts: localhost
   become: true
+  remote_user: ansible
   tasks:
-    - name: remove the line
-      lineinfile:
-        path: /home/ansible/statements.txt
-        line:  ^yuvaraj # search for the line that starts with yuvaraj
-        state: absent   # remove the line that was found from the above regular expression
+   - name: Add a user
+     user:
+       name: asianaa
+       password: "{{ 'test123' | password_hash('sha512')}}"
+       state: present 
 ...
